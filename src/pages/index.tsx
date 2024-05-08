@@ -8,7 +8,7 @@ export default function Home() {
   console.log(splitted[1]);
   const xCordinate = parseFloat(splitted[0]);
   const yCordinate = parseFloat(splitted[1]);
-  
+
   const compareDistanceInUnit = () => {
     const units: any[] = [];
 
@@ -109,7 +109,7 @@ export default function Home() {
             ascending.length > 0 ?
               ascending.map((item: any, i:number) => {
                 return (
-                  <div>
+                  <div key={i}>
                     <li>{item.distance.toFixed(2)}</li>
                     <li>{item.dbData.name}</li>
                   </div>
