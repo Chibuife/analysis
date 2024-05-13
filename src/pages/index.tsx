@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
-  const [coordinate, setCoordinate] = useState("");
+  const [coordinate, setCoordinate] = useState("6.46947,7.50842");
   const [valuesDB, setValueDB] = useState<any>([])
   let splitted = coordinate.split(/[ ,]+/);
   console.log(splitted[1]);
@@ -102,16 +102,24 @@ export default function Home() {
     <div>
       <div>
         <h2>Enter coordinate</h2>
-        <input type="text" className="b-2 border-2" onChange={(e) => setCoordinate(e.target.value)} />
+        <input type="text" className="b-2 border-2" value={coordinate} onChange={(e) => setCoordinate(e.target.value)} />
         <button onClick={() => compareDistanceInUnit()}>Show units</button>
         <ul>
+          <div  className="flex gap-12 py-2">
+            <li className="w-[25%]">Distance</li>
+            <li className="w-[25%]">Name</li>
+            <li className="w-[25%]">Coordinate</li>
+            <li className="w-[25%]">Height</li>
+          </div>
           {
             ascending.length > 0 ?
               ascending.map((item: any, i:number) => {
                 return (
-                  <div key={i}>
-                    <li>{item.distance.toFixed(2)}</li>
-                    <li>{item.dbData.name}</li>
+                  <div key={i} className="flex gap-12 py-2">
+                    <li className="w-[25%]">{item.distance.toFixed(2)} km</li>
+                    <li className="w-[25%]">{item.dbData.name}</li>
+                    <li className="w-[25%]">{item.dbData.xAxes}, {item.dbData.yAxes}</li>
+                    <li className="w-[25%]">{item.dbData.height}m</li>
                   </div>
                 )
               })
