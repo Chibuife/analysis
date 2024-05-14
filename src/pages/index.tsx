@@ -23,7 +23,6 @@ export default function Home() {
 
 
     const coordinatesDB = [
-
       {
         xAxes: 6.454474,
         yAxes: 7.51225,
@@ -43,7 +42,7 @@ export default function Home() {
         name: "Fidelma Hotel"
       },
       {
-        xAxes: 6.46675,
+        xAxes: 6.426675,
         yAxes: 7.530847,
         height: 13.957522,
         name: "Parish House"
@@ -58,7 +57,7 @@ export default function Home() {
         xAxes: 6.436467,
         yAxes: 7.514567,
         height: 30,
-        name: "SPA"
+        name: "Spar"
       },
       {
         xAxes: 6.479345,
